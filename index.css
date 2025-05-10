@@ -1,107 +1,88 @@
-/* Base styles */
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f3f4f6; /* Light mode default */
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-/* Dark mode body styles */
 .dark body {
-    background-color: #0f172a; /* Equivalent to dark:bg-slate-900 */
-    color: #e2e8f0; /* Default text color for dark mode (slate-200) */
+    background-color: #0f172a;
+    color: #e2e8f0; 
 }
-
 .kanban-column {
     min-height: 300px;
     transition: background-color 0.2s ease-in-out;
-    background-color: #f9fafb; /* Light mode column (gray-50) */
+    background-color: #f9fafb; 
 }
-/* Dark mode Kanban column */
 .dark .kanban-column {
-    background-color: #1e293b; /* Equivalent to dark:bg-slate-800 */
+    background-color: #1e293b; 
 }
-
 .kanban-column.drag-over {
-    background-color: #e0e7ff; /* Light mode drag over (indigo-100) */
+    background-color: #e0e7ff; 
 }
-/* Dark mode Kanban column drag over */
 .dark .kanban-column.drag-over {
-    background-color: #334155; /* Equivalent to dark:bg-slate-700 */
+    background-color: #334155; 
 }
-
 .task-card {
     cursor: grab;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.2s;
-    background-color: #ffffff; /* Light mode card (white) */
-    border: 1px solid transparent; /* Ensure consistent box model */
+    background-color: #ffffff; 
+    border: 1px solid transparent; 
 }
-/* Dark mode task card */
 .dark .task-card {
-    background-color: #334155; /* Equivalent to dark:bg-slate-700 */
-    border: 1px solid #475569;  /* Equivalent to dark:border-slate-600 */
+    background-color: #334155;
+    border: 1px solid #475569; 
 }
-/* Styles for task card text, applied directly or via JS if needed */
 .dark .task-card p {
-    color: #cbd5e1; /* dark:text-slate-300, adjust as needed */
+    color: #cbd5e1; 
 }
-
-
 .task-card:active {
     cursor: grabbing;
     transform: scale(1.05);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-/* Dark mode task card active shadow */
 .dark .task-card:active {
-    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.15); /* dark:shadow-lg dark:shadow-indigo-500/30 */
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.15); 
 }
-
 .delete-btn {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
-    color: #ef4444; /* Light mode (red-500) */
+    color: #ef4444; 
 }
 .delete-btn:hover {
-    color: #dc2626; /* Light mode hover (red-600) */
+    color: #dc2626; 
 }
-/* Dark mode delete button */
 .dark .delete-btn {
-    color: #f87171; /* Equivalent to dark:text-red-400 */
+    color: #f87171;
 }
 .dark .delete-btn:hover {
-    color: #ef4444; /* Equivalent to dark:hover:text-red-500 */
+    color: #ef4444;
 }
 .task-card:hover .delete-btn {
     opacity: 1;
 }
-
 /* Custom scrollbar */
 .tasks-container::-webkit-scrollbar {
     width: 8px;
 }
 .tasks-container::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Light mode track */
+    background: #f1f1f1;
     border-radius: 10px;
 }
-/* Dark mode scrollbar track */
 .dark .tasks-container::-webkit-scrollbar-track {
-    background: #1e293b; /* dark:bg-slate-800 (or a slightly different shade like slate-700: #334155) */
+    background: #1e293b;
 }
 .tasks-container::-webkit-scrollbar-thumb {
-    background: #cbd5e1; /* Light mode thumb (gray-300/slate-300) */
+    background: #cbd5e1; 
     border-radius: 10px;
 }
-/* Dark mode scrollbar thumb */
 .dark .tasks-container::-webkit-scrollbar-thumb {
-    background: #475569; /* dark:bg-slate-600 (or slate-500: #64748b) */
+    background: #475569; 
 }
 .tasks-container::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8; /* Light mode thumb hover (gray-400/slate-400) */
+    background: #94a3b8;
 }
-/* Dark mode scrollbar thumb hover */
 .dark .tasks-container::-webkit-scrollbar-thumb:hover {
-    background: #64748b; /* dark:bg-slate-500 (or slate-400: #94a3b8) */
+    background: #64748b; 
 }
-
 #confetti-canvas {
     position: fixed;
     top: 0;
@@ -111,17 +92,15 @@ body {
     pointer-events: none;
     z-index: 9999;
 }
-
-/* Input field dark mode specific styles (already good as they target .dark #task-input) */
 .dark #task-input {
-    background-color: #374151; /* bg-gray-700 (Tailwind slate-700 is #334155) */
-    border-color: #4b5563;    /* border-gray-600 (Tailwind slate-600 is #475569) */
-    color: #f3f4f6;           /* text-gray-100 (Tailwind slate-100 is #f1f5f9) */
+    background-color: #374151; 
+    border-color: #4b5563; 
+    color: #f3f4f6; 
 }
 .dark #task-input::placeholder {
-    color: #9ca3af;           /* placeholder-gray-400 (Tailwind slate-400 is #94a3b8) */
+    color: #9ca3af; 
 }
 .dark #task-input:focus {
-    --tw-ring-color: #6366f1; /* ring-indigo-500 */
-    border-color: #6366f1;    /* border-indigo-500 */
+    --tw-ring-color: #6366f1;
+    border-color: #6366f1;
 }
