@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organyze</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link href="index.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="p-4 md:p-8"> <canvas id="confetti-canvas"></canvas>
+
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-slate-700 dark:text-slate-200">Organyz Kanban</h1>
+            <p class="text-slate-500 dark:text-slate-400">Organize your tasks and get things done!</p>
+        </header>
+
+        <div class="mb-8 p-6 bg-white dark:bg-slate-800 rounded-lg shadow-xl dark:shadow-slate-900/50">
+            <h2 class="text-2xl font-semibold text-slate-700 dark:text-slate-200 mb-4">Add New Task</h2>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <input type="text" id="task-input" placeholder="Enter task description..." class="flex-grow p-3 border border-slate-300 dark:border-slate-600 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-shadow">
+                <button id="add-task-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-150 ease-in-out transform hover:scale-105 active:bg-indigo-800">
+                    Add Task
+                </button>
+            </div>
+            <p id="error-message" class="text-red-500 dark:text-red-400 mt-2 text-sm h-5"></p>
+        </div>
+
+        <div id="kanban-board" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div id="todo-column" class="kanban-column p-5 rounded-lg shadow-lg dark:shadow-slate-900/50" data-status="todo">
+                <h3 class="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-4 border-b-2 border-rose-500 dark:border-rose-400 pb-2">To Do</h3>
+                <div class="tasks-container space-y-3 min-h-[200px] max-h-[60vh] overflow-y-auto p-1">
+                    </div>
+            </div>
+
+            <div id="inprogress-column" class="kanban-column p-5 rounded-lg shadow-lg dark:shadow-slate-900/50" data-status="inprogress">
+                <h3 class="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-4 border-b-2 border-amber-500 dark:border-amber-400 pb-2">In Progress</h3>
+                <div class="tasks-container space-y-3 min-h-[200px] max-h-[60vh] overflow-y-auto p-1">
+                    </div>
+            </div>
+
+            <div id="done-column" class="kanban-column p-5 rounded-lg shadow-lg dark:shadow-slate-900/50" data-status="done">
+                <h3 class="text-xl font-semibold text-slate-700 dark:text-slate-200 mb-4 border-b-2 border-green-500 dark:border-green-400 pb-2">Done</h3>
+                <div class="tasks-container space-y-3 min-h-[200px] max-h-[60vh] overflow-y-auto p-1">
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js" defer></script> 
+</body>
+
+</html>
