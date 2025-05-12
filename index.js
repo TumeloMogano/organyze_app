@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!errorMessageElement) return;
         errorMessageElement.textContent = message;
         // Add class for styling if needed, e.g., visibility
-        errorMessageElement.classList.remove('opacity-0'); // Assuming you might use opacity for fade in/out
+        errorMessageElement.classList.remove('opacity-0'); 
 
         setTimeout(() => {
             errorMessageElement.textContent = '';
